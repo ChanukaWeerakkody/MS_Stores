@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+<!--    servlets -->
+    <servlet>
+        <servlet-name>Customer</servlet-name>
+        <servlet-class>com.eshopper.eshopperapi.servlet.CustomerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Customer</servlet-name>
+        <url-pattern>/customer</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Item</servlet-name>
+        <servlet-class>com.eshopper.eshopperapi.servlet.ItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Item</servlet-name>
+        <url-pattern>/item</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Orders</servlet-name>
+        <servlet-class>com.eshopper.eshopperapi.servlet.OrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Orders</servlet-name>
+        <url-pattern>/orders</url-pattern>
+    </servlet-mapping>
+
+
+
+
+<!--    filters -->
+    <filter-mapping>
+        <filter-name>CORSFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>CORSFilter</filter-name>
+        <filter-class>com.eshopper.eshopperapi.util.filter.CORSFilter</filter-class>
+    </filter>
+</web-app>
